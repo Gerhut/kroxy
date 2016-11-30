@@ -1,0 +1,42 @@
+{
+  "name": "kroxy",
+  "version": "0.0.0",
+  "description": "HTTP proxy middleware of Koa.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ava --watch",
+    "lint": "eslint .",
+    "unit": "ava",
+    "cover": "nyc ava",
+    "test": "npm run lint && npm run cover"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gerhut/kroxy.git"
+  },
+  "keywords": [
+    "koa",
+    "middleware",
+    "proxy"
+  ],
+  "author": "George Chung <Gerhut@GMail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gerhut/kroxy/issues"
+  },
+  "homepage": "https://github.com/Gerhut/kroxy#readme",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "debug": "^2.3.3"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "eslint": "^3.11.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "koa": "^1.2.4",
+    "nyc": "^10.0.0",
+    "tunnel-agent": "^0.4.3"
+  }
+}
