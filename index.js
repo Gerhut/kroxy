@@ -1,3 +1,5 @@
+'use strict'
+
 const net = require('net')
 const axios = require('axios')
 const debug = require('debug')('kroxy')
@@ -69,7 +71,9 @@ exports.connect = () => (request, source, head) => {
     }
   }
 
-  const [ hostname, port = 80 ] = request.url.split(':')
+  const urlParts = request.url.split(':')
+  const hostname = urlParts[0]
+  const port = +urlParts[1]
 
   let target = net.connect(port, hostname, () => {
     source.write(`HTTP/${request.httpVersion} 200 Connection Established\r\n\r\n`)
