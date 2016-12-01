@@ -49,7 +49,7 @@ exports = module.exports = () => function * (next) {
   this.response.body = response.data
 }
 
-exports.connect = (request, source, head) => {
+exports.connect = () => (request, source, head) => {
   debug(`CONNECT ${request.url}`)
 
   function cleanup (error) {
