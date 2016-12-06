@@ -23,7 +23,7 @@ app.use(kroxy()) // HTTP forward proxy
 
 const server = http.createServer()
 server.on('request', app.callback())
-server.on('connect', kroxy.connect()) // HTTP tunnel proxy
+server.on('connect', kroxy.tunnel()) // HTTP tunnel proxy
 ```
 
 ## License

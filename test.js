@@ -14,7 +14,7 @@ test.before(t => new Promise(resolve => {
   app.use(kroxy())
   app.use(function * () { this.body = 'foo' })
   const server = app.listen(proxyAddress, resolve)
-  server.on('connect', kroxy.connect())
+  server.on('connect', kroxy.tunnel())
 }))
 
 test.beforeEach(t => {
