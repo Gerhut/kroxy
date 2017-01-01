@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "unit": "ava",
     "cover": "nyc ava",
-    "test": "npm run lint && npm run cover"
+    "test": "npm run lint && npm run cover",
+    "report": "nyc report --reporter=html"
   },
   "repository": {
     "type": "git",
@@ -26,12 +27,12 @@
   },
   "homepage": "https://github.com/Gerhut/kroxy#readme",
   "dependencies": {
-    "axios": "^0.15.3",
-    "debug": "^2.3.3"
+    "debug": "^2.6.0"
   },
   "devDependencies": {
     "ava": "^0.17.0",
-    "eslint": "^3.11.1",
+    "axios": "^0.15.3",
+    "eslint": "^3.12.2",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
