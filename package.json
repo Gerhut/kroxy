@@ -7,8 +7,8 @@
     "dev": "ava --watch",
     "lint": "eslint .",
     "unit": "ava",
-    "cover": "nyc ava",
-    "test": "npm run lint && npm run cover",
+    "coverage": "nyc ava",
+    "test": "npm run lint && npm run coverage",
     "report": "nyc report --reporter=html"
   },
   "repository": {
@@ -27,7 +27,8 @@
   },
   "homepage": "https://github.com/Gerhut/kroxy#readme",
   "dependencies": {
-    "debug": "^2.6.0"
+    "debug": "^2.6.0",
+    "raw-body": "^2.2.0"
   },
   "devDependencies": {
     "ava": "^0.17.0",
