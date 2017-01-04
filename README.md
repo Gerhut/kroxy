@@ -12,6 +12,23 @@ HTTP proxy middleware of Koa.
     $ npm install --save kroxy
 
 ## Usage
+
+```javascript
+app.use(kroxy([options]))
+```
+
+## Options
+
+All options are default false.
+
+- `trustRequestBody`
+    If enabled and `context.request.body` exists, use it as the body of request.
+- `parseResponseBody`
+    If enabled, `context.response.body` are parsed into `Buffer`, otherwise
+    stream.
+
+## Example
+
 ```javascript
 const http = require('http')
 
