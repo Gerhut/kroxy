@@ -1,6 +1,6 @@
 {
   "name": "kroxy",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "HTTP proxy middleware of Koa.",
   "main": "index.js",
   "scripts": {
