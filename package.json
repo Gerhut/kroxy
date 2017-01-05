@@ -28,6 +28,7 @@
   "homepage": "https://github.com/Gerhut/kroxy#readme",
   "dependencies": {
     "debug": "^2.6.0",
+    "inflation": "^2.0.0",
     "raw-body": "^2.2.0"
   },
   "devDependencies": {

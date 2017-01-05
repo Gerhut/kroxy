@@ -202,3 +202,17 @@ test('parse and modify response body', t => {
     .then(axios => axios.post('/post', 'bar=1')
     .then(response => t.is(response.data.form.bar, '2')))
 })
+
+test('parse gzipped response body', t => {
+  const app = koa()
+  app.use(function * (next) {
+    yield next
+    this.response.body = JSON.parse(this.response.body.toString('utf-8'))
+    t.falsy(this.response.get('content-encoding'),
+      'Remove Content-Encoding header')
+    t.true(this.response.body.gzipped)
+  })
+  app.use(kroxy({ parseResponseBody: true }))
+  return axiosServer(t, app)
+    .then(axios => axios.get('/gzip'))
+})

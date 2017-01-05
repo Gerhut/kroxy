@@ -24,8 +24,8 @@ All options are default false.
 - `trustRequestBody`
     If enabled and `context.request.body` exists, use it as the body of request.
 - `parseResponseBody`
-    If enabled, `context.response.body` are parsed into `Buffer`, otherwise
-    stream.
+    If enabled, `context.response.body` are parsed into unzipped `Buffer`,
+    otherwise stream.
 
 ## Example
 
