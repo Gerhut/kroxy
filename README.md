@@ -1,4 +1,6 @@
 # kroxy
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Gerhut/kroxy.svg)](https://greenkeeper.io/)
 HTTP proxy middleware of Koa.
 
 [![Build Status](https://travis-ci.org/Gerhut/kroxy.svg?branch=master)](https://travis-ci.org/Gerhut/kroxy)
