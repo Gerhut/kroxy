@@ -8,7 +8,6 @@ HTTP proxy middleware of Koa.
 [![devDependencies Status](https://david-dm.org/Gerhut/kroxy/dev-status.svg)](https://david-dm.org/Gerhut/kroxy?type=dev)
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-
 ## Install
 
     $ npm install --save kroxy
