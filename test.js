@@ -1,9 +1,9 @@
-import stream from 'stream'
-import test from 'ava'
-import koa from 'koa'
-import axios from 'axios'
-import tunnelAgent from 'tunnel-agent'
-import kroxy from '.'
+const stream = require('stream')
+const test = require('ava')
+const koa = require('koa')
+const axios = require('axios')
+const tunnelAgent = require('tunnel-agent')
+const kroxy = require('.')
 
 const generalKroxyApp = (() => {
   const app = koa()
