@@ -70,7 +70,7 @@ test('http tunnel', t => axiosServer(t)
         port: t.context.server.address().port
       }
     })
-  })))
+  }).then(() => t.pass())))
 
 test('with untrusted request body', t => {
   const app = koa()
