@@ -32,7 +32,7 @@
     "raw-body": "^2.2.0"
   },
   "devDependencies": {
-    "ava": "^0.19.1",
+    "ava": "^3.8.2",
     "axios": "^0.16.1",
     "eslint": "^3.12.2",
     "eslint-config-standard": "^10.2.1",
