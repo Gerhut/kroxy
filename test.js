@@ -32,10 +32,10 @@ test('Method', t => axiosServer(t)
 
 test('Query String', t => axiosServer(t)
   .then(axios => axios.get('/get', { params: { foo: 'bar' } })
-  .then(response => t.is(response.data.args.foo, 'bar'))))
+    .then(response => t.is(response.data.args.foo, 'bar'))))
 
 test('Request Header', t => axiosServer(t)
-    .then(axios => axios.get('/headers', { headers: { 'x-foo': 'bar' } })
+  .then(axios => axios.get('/headers', { headers: { 'x-foo': 'bar' } })
     .then(response => t.is(response.data.headers['X-Foo'], 'bar'))))
 
 test('Request Body', t => axiosServer(t)
@@ -82,7 +82,7 @@ test('with untrusted request body', t => {
   app.use(kroxy())
   return axiosServer(t, app)
     .then(axios => axios.post('/post', 'bar=1')
-    .then(response => t.not(response.data.data, 'foo')))
+      .then(response => t.not(response.data.data, 'foo')))
 })
 
 test('with request body (null)', t => {
@@ -94,7 +94,7 @@ test('with request body (null)', t => {
   app.use(kroxy({ trustRequestBody: true }))
   return axiosServer(t, app)
     .then(axios => axios.post('/post', 'bar=1')
-    .then(response => t.false('bar' in response.data.form)))
+      .then(response => t.false('bar' in response.data.form)))
 })
 
 test('with request body (string)', t => {
@@ -107,10 +107,10 @@ test('with request body (string)', t => {
   app.use(kroxy({ trustRequestBody: true }))
   return axiosServer(t, app)
     .then(axios => axios.post('/post', 'bar=1')
-    .then(response => {
-      t.is(response.data.headers['Content-Type'], 'text/plain;charset=utf-8')
-      t.is(response.data.data, 'foo')
-    }))
+      .then(response => {
+        t.is(response.data.headers['Content-Type'], 'text/plain;charset=utf-8')
+        t.is(response.data.data, 'foo')
+      }))
 })
 
 test('with request body (string), keep content type', t => {
@@ -122,9 +122,9 @@ test('with request body (string), keep content type', t => {
   app.use(kroxy({ trustRequestBody: true }))
   return axiosServer(t, app)
     .then(axios => axios.post('/post', 'bar=1')
-    .then(response => {
-      t.is(response.data.form.bar, '2')
-    }))
+      .then(response => {
+        t.is(response.data.form.bar, '2')
+      }))
 })
 
 test('with request body (buffer)', t => {
@@ -136,7 +136,7 @@ test('with request body (buffer)', t => {
   app.use(kroxy({ trustRequestBody: true }))
   return axiosServer(t, app)
     .then(axios => axios.post('/post', 'bar=1')
-    .then(response => t.is(response.data.form.bar, '3')))
+      .then(response => t.is(response.data.form.bar, '3')))
 })
 
 test('with request body (stream)', t => {
@@ -149,7 +149,7 @@ test('with request body (stream)', t => {
   app.use(kroxy({ trustRequestBody: true }))
   return axiosServer(t, app)
     .then(axios => axios.post('/post', 'bar=1')
-    .then(response => t.is(response.data.form.bar, '4')))
+      .then(response => t.is(response.data.form.bar, '4')))
 })
 
 test('with request body (JSON)', t => {
@@ -162,7 +162,7 @@ test('with request body (JSON)', t => {
   app.use(kroxy({ trustRequestBody: true }))
   return axiosServer(t, app)
     .then(axios => axios.post('/post', 'bar=1')
-    .then(response => t.is(response.data.json.bar, 5)))
+      .then(response => t.is(response.data.json.bar, 5)))
 })
 
 test('with request body (JSON), keep content type', t => {
@@ -174,7 +174,7 @@ test('with request body (JSON), keep content type', t => {
   app.use(kroxy({ trustRequestBody: true }))
   return axiosServer(t, app)
     .then(axios => axios.post('/post', 'bar=1')
-    .then(response => t.is(response.data.form['{"bar":"'], '5"}')))
+      .then(response => t.is(response.data.form['{"bar":"'], '5"}')))
 })
 
 test('do not parse response body', t => {
@@ -186,7 +186,7 @@ test('do not parse response body', t => {
   app.use(kroxy())
   return axiosServer(t, app)
     .then(axios => axios.post('/post', 'bar=1')
-    .then(response => t.is(response.data.form.bar, '1')))
+      .then(response => t.is(response.data.form.bar, '1')))
 })
 
 test('parse and modify response body', t => {
@@ -200,7 +200,7 @@ test('parse and modify response body', t => {
   app.use(kroxy({ parseResponseBody: true }))
   return axiosServer(t, app)
     .then(axios => axios.post('/post', 'bar=1')
-    .then(response => t.is(response.data.form.bar, '2')))
+      .then(response => t.is(response.data.form.bar, '2')))
 })
 
 test('parse gzipped response body', t => {
