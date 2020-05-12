@@ -24,7 +24,7 @@ const axiosServer = ({ context }, app = generalKroxyApp) =>
     context.server = server
   })
 
-test.afterEach(({context: { server }}) => server && server.close())
+test.afterEach(({ context: { server } }) => server && server.close())
 
 test('Method', t => axiosServer(t)
   .then(axios => axios.patch('/patch'))
@@ -47,7 +47,7 @@ test('Status Code', t => axiosServer(t)
   .catch(error => t.is(error.response.status, 418)))
 
 test('Response Header', t => axiosServer(t)
-  .then(axios => axios.get('/response-headers', {params: { 'x-foo': 'bar' }}))
+  .then(axios => axios.get('/response-headers', { params: { 'x-foo': 'bar' } }))
   .then(response => t.is(response.headers['x-foo'], 'bar')))
 
 test('general http request', t => {
